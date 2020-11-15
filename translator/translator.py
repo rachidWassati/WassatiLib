@@ -1,8 +1,9 @@
 from googletrans import Translator
 from langdetect import detect
+from textblob import TextBlob
 
 def detectLang(text):
-    return detect(text)
+    return TextBlob(text).detect_language()
 
 translator = Translator()
 
