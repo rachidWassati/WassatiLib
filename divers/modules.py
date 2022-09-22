@@ -6,13 +6,13 @@ import csv
 def getCurrentDate(listData: list) -> str:
     '''
     Cette fonction renvoit la date d'aujourd'hui avec plusieurs possibilités:
-    YYYYMMDD ou YYYYMM ou YYYYDD ou MMDD en fonction des arguments passés dans une liste
-        Parameters:
-        -----------
-            listData (list): doit contenir les éléments 'year', 'month' ou 'day'
-        Returns:
-        --------
-            date (str): la date d'aujourd'hui avec le format souhaité
+    YYYYMMDD ou YYYYMM ou YYYYDD ou MMDD en fonction des arguments passés dans une liste.
+
+    Args:
+        listData (list): doit contenir les éléments 'year', 'month' ou 'day'
+
+    Returns:
+        date (str): la date d'aujourd'hui avec le format souhaité
     '''
     listData = [element.lower() for element in listData]
     currentDate =''
@@ -31,15 +31,15 @@ def getCurrentDate(listData: list) -> str:
 
 def writeToCsv(path_file: str, dico: dict, list_columns: list) -> None:
     '''
-    Fonction qui va ecrire dans un fichier csv les données passées sous forme de dictionnaire
-        Parameters:
-        -----------
-            path_file (str): chemin du fichier csv
-            dico (dict): dictionnaire a ecrire dans le csv
-            list_columns (list): liste des colonnes a faire coincider avec les fieldnames du csv
-        Returns:
-        --------
-            None
+    Fonction qui va ecrire dans un fichier csv les données passées sous forme de dictionnaire.
+
+    Args:
+        path_file (str): chemin du fichier csv
+        dico (dict): dictionnaire a ecrire dans le csv
+        list_columns (list): liste des colonnes a faire coincider avec les fieldnames du csv
+    
+    Returns:
+        None
     '''
     if not isinstance(path_file, str):
         raise TypeError(f"Le chemin du fichier doit être de type 'str' et non pas '{type(path_file)}'.")
@@ -57,13 +57,13 @@ def writeToCsv(path_file: str, dico: dict, list_columns: list) -> None:
 def cleanDf(path_file: str, columns: list) -> None:
     '''
     Fonction qui va nettoyer un csv des doublons en se basant sur une liste de colonnes comme subset
-        Parameters:
-        -----------
-            path_file (str): chemin qui mene au fichier csv
-            columns (list): liste des colonnes a prendre en compte pour le drop_duplicates
-        Returns:
-        --------
-            None
+
+    Args:
+        path_file (str): chemin qui mene au fichier csv
+        columns (list): liste des colonnes a prendre en compte pour le drop_duplicates
+    
+    Returns:
+        None
     '''
     if not isinstance(path_file, str):
         raise TypeError(f"Le chemin du fichier doit être de type 'str' et non pas '{type(path_file)}'.")
@@ -78,14 +78,14 @@ def cleanDf(path_file: str, columns: list) -> None:
 
 def initiateCsvFile(csvFilePath: str, list_columns: list) -> bool:
     '''
-    Fonction qui va initialiser un fichier csv vide avec la liste des colonnes voulues
-        Parameters:
-        -----------
-            csvFilePath (str): chemin qui mene au fichier csv
-            list_columns (list): liste des colonnes a mettre dans le csv
-        Returns:
-        --------
-            (bool) True si tout c'est bien passé sinon False
+    Fonction qui va initialiser un fichier csv vide avec la liste des colonnes voulues.
+
+    Args:
+        csvFilePath (str): chemin qui mene au fichier csv
+        list_columns (list): liste des colonnes a mettre dans le csv
+    
+    Returns:
+        (bool) True si tout c'est bien passé sinon False
     '''
     if not isinstance(csvFilePath, str):
         raise TypeError(f"Le chemin du fichier doit être de type 'str' et non pas '{type(csvFilePath)}'.")
@@ -103,12 +103,12 @@ def initiateCsvFile(csvFilePath: str, list_columns: list) -> bool:
 def diffList(list1: list, list2: list) -> list:
     '''
     Fonction qui renvoie la difference entre deux listes
-        Parameters:
-        -----------
-            list1 (list): Première liste
-            list2 (list): Deuxième liste
-        Returns:
-        --------
-            (list) contenant seulement la différence entre les deux listes
+
+    Args:
+        list1 (list): Première liste
+        list2 (list): Deuxième liste
+    
+    Returns:
+        (list) contenant seulement la différence entre les deux listes
     '''
     return list(set(list1).symmetric_difference(set(list2)))
