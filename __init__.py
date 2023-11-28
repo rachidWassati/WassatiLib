@@ -21,9 +21,11 @@ Examples:
     >>> from divers.modules import getCurrentDate
     >>> getCurrentDate(['month', 'year'])
     '20229'
+
     >>> from getArguments.parser import parser
     >>> args = parser(f="file", o="output")
     >>> # $ python main.py -f data.csv -o data_copy.csv
+    
     >>> from scraper.scraper import Scraper
     >>> scraper = Scraper("https://www.scrapbook.com/")
     >>> scraper.isValid()

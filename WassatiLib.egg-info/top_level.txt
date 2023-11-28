@@ -1,0 +1,6 @@
+FullProcessText
+divers
+getArguments
+nlp
+scraper
+translator
